@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* This is your global CSS Stylesheet */
+/* Change on your own risk */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: "DM Sans", sans-serif;
+  }
+
+  /* This is the css for transparent mobile menu */
+  .main-nav-menu-mobile {
+    background: rgba(107, 106, 106, 0.5);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+  }
+
+  /* Navbar --> Navbar.jsx */
+  .header-menu > ul > li {
+    border-bottom: 1px solid transparent;
+  }
+
+  .header-menu > ul > li:hover {
+    color: black;
+    border-bottom: 1px solid black;
+    width: fit-content;
+  }
+
+  /* Hero-light-blue background */
+  .blue-background-container::before {
+    content: "";
+    position: absolute;
+    background-color: #d5f3fd50;
+    border: 1px solid #34be6340;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 200px;
+    z-index: -1;
+    border-radius: 30px;
+  }
+
+  /* Shadow for form-container on hero section */
+  .form-container {
+    filter: drop-shadow(11px 11px 35px rgba(101, 104, 102, 0.14));
+  }
+
+  /* Benefit Section light gray background*/
+  .gray-background-container::before {
+    content: "";
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #bfbfbf30;
+    top: 70px;
+    bottom: 70px;
+    left: 0;
+    right: 0px;
+    z-index: -1;
+    border-radius: 30px;
+  }
+
+  /* Mobile resoinsive */
+  @media screen and (max-width: 768px) {
+    .blue-background-container::before {
+      right: 0;
+      bottom: 200px;
+    }
+    .gray-background-container::before {
+      top: 0;
+      bottom: 70px;
+    }
+  }
+}
